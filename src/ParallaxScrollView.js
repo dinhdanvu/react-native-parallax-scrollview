@@ -95,14 +95,14 @@ export default class ParallaxScrollView extends Component {
                   style={styles.avatarView}
                 >
                 {(typeof userImage === "string" || userImage instanceof String) ?
-                <Image source={{uri:userImage || USER.image}} style={{height: 120, width: 120, borderRadius: 60}} />
+                <Image source={{uri:userImage}} style={{height: 120, width: 120, borderRadius: 60}} />
                 :
-                  <Image source={userImage || USER.image} style={{height: 120, width: 120, borderRadius: 60}} />
+                  <Image source={userImage} style={{height: 120, width: 120, borderRadius: 60}} />
                 }
                 </View>
                 <View style={{paddingVertical: 10}}>
-                  <Text style={{textAlign: 'center', fontSize: 22, color: 'white', paddingBottom: 5}}>{userName || USER.name}</Text>
-                  <Text style={{textAlign: 'center', fontSize: 17, color: 'rgba(247,247, 250, 1)', paddingBottom: 5}}>{userTitle || USER.title}</Text>
+                  <Text style={{textAlign: 'center', fontSize: 22, color: 'white', paddingBottom: 5}}>{userName}</Text>
+                  <Text style={{textAlign: 'center', fontSize: 17, color: 'rgba(247,247, 250, 1)', paddingBottom: 5}}>{userTitle}</Text>
                 </View>
               </View>
             )
@@ -130,7 +130,7 @@ export default class ParallaxScrollView extends Component {
       >
         {navBarTitleComponent ||
         <Text style={{ fontSize: 18, fontWeight: '600', color: navBarTitleColor || 'white' }}>
-          {this.props.navBarTitle || USER.name}
+          {this.props.navBarTitle}
         </Text>}
       </Animated.View>
     );
